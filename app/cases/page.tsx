@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { Navigation } from "@/components/landing/navigation";
+import { FooterSection } from "@/components/landing/footer-section";
 
 const categories = [
   "Все",
@@ -22,7 +24,6 @@ const cases = [
     title: "Запуск нового SUV на рынок",
     client: "АвтоПремиум",
     category: "Автомобили",
-    image: null,
     goals: "Повышение знания бренда нового SUV среди аудитории 28–45 лет",
     actions: "Programmatic видео + rich media баннеры, таргетинг по интересам к авто",
     formats: "Pre-roll, Rich Media, Display",
@@ -33,7 +34,6 @@ const cases = [
     title: "Рост продаж в e-commerce",
     client: "StyleShop",
     category: "Ecommerce",
-    image: null,
     goals: "Увеличить количество транзакций в интернет-магазине на 30%",
     actions: "Ретаргетинг по брошенным корзинам, динамические баннеры с товарами",
     formats: "Dynamic Display, In-App, Mobile Banner",
@@ -44,7 +44,6 @@ const cases = [
     title: "Национальный запуск FMCG-продукта",
     client: "FreshFood",
     category: "FMCG",
-    image: null,
     goals: "Быстрый охват целевой аудитории 18–35 лет по всей стране за 2 недели",
     actions: "Масштабная programmatic кампания с частотным таргетингом",
     formats: "Video, Display, Native, CTV",
@@ -55,7 +54,6 @@ const cases = [
     title: "Продвижение аптечной сети",
     client: "PharmaTech",
     category: "Фарма",
-    image: null,
     goals: "Привлечение трафика в офлайн-аптеки через геотаргетинг",
     actions: "Гиперлокальный таргетинг в радиусе 1 км от аптек, мобильная реклама",
     formats: "Mobile Banner, In-App, Push",
@@ -66,7 +64,6 @@ const cases = [
     title: "B2B лидогенерация для SaaS",
     client: "TechSolutions",
     category: "B2B",
-    image: null,
     goals: "Привлечение квалифицированных лидов среди IT-директоров и CTO",
     actions: "Таргетинг по профессиональным интересам, нативные материалы в деловых медиа",
     formats: "Native, Display, In-Stream Video",
@@ -77,7 +74,6 @@ const cases = [
     title: "Акция для торговой сети",
     client: "RetailMax",
     category: "Retail",
-    image: null,
     goals: "Анонс скидочной акции и рост трафика в магазины в выходные",
     actions: "Флайтовая кампания с пиком в пятницу-субботу, геотаргетинг по районам",
     formats: "Display, Mobile, Push, Out-Stream",
@@ -88,7 +84,6 @@ const cases = [
     title: "Продвижение ЖК бизнес-класса",
     client: "GrandEstate",
     category: "Недвижимость",
-    image: null,
     goals: "Привлечение заявок от аудитории с доходом выше среднего",
     actions: "Таргетинг по поведенческим паттернам, rich media с 3D-визуализацией",
     formats: "Rich Media, Video, Display, Native",
@@ -99,7 +94,6 @@ const cases = [
     title: "Чековое промо для маркетплейса",
     client: "MegaMall",
     category: "Чековые промо",
-    image: null,
     goals: "Вовлечение покупателей в чековую акцию и рост среднего чека",
     actions: "Таргетинг на покупателей категорий, интерактивные форматы с механикой",
     formats: "Interstitial, Rich Media, In-App",
@@ -110,7 +104,6 @@ const cases = [
     title: "Запуск нового маркетплейса",
     client: "QuickMart",
     category: "Маркетплейс",
-    image: null,
     goals: "Привлечение первых покупателей и продавцов на платформу",
     actions: "Двойная аудитория (B2C + B2B), сплит бюджета на знание и перформанс",
     formats: "Video, Display, Native, Mobile",
@@ -121,22 +114,13 @@ const cases = [
 export default function CasesPage() {
   const [activeCategory, setActiveCategory] = useState("Все");
 
-  const filtered = activeCategory === "Все"
-    ? cases
-    : cases.filter(c => c.category === activeCategory);
+  const filtered = activeCategory === "Все" ? cases : cases.filter((c) => c.category === activeCategory);
 
   return (
-    <main className="min-h-screen bg-background">
-      {/* Header */}
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-12 pt-32 pb-12">
-        <Link
-          href="/"
-          className="inline-flex items-center gap-2 text-xs text-muted-foreground hover:text-foreground transition-colors duration-300 mb-10 group"
-        >
-          <span className="transition-transform duration-300 group-hover:-translate-x-1">←</span>
-          Назад
-        </Link>
+    <main className="min-h-screen bg-background overflow-x-hidden noise-overlay">
+      <Navigation />
 
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-12 pt-32 pb-12">
         <span className="inline-flex items-center gap-3 text-xs font-mono text-muted-foreground mb-4 uppercase tracking-widest">
           <span className="w-6 h-px bg-foreground/30" />
           Портфолио
@@ -151,10 +135,9 @@ export default function CasesPage() {
         </p>
       </div>
 
-      {/* Category Filter */}
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12 pb-10">
         <div className="flex flex-wrap gap-2">
-          {categories.map(cat => (
+          {categories.map((cat) => (
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
@@ -170,7 +153,6 @@ export default function CasesPage() {
         </div>
       </div>
 
-      {/* Cases Grid */}
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12 pb-24">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filtered.map((item) => (
@@ -178,20 +160,21 @@ export default function CasesPage() {
               key={item.id}
               className="group border border-foreground/10 hover:border-foreground/30 transition-all duration-300 flex flex-col"
             >
-              {/* Image placeholder */}
               <div className="aspect-video bg-gradient-to-br from-foreground/5 to-foreground/10 flex items-center justify-center border-b border-foreground/10 relative overflow-hidden">
                 <div className="text-center">
                   <div className="font-mono text-[10px] text-muted-foreground uppercase tracking-widest">{item.client}</div>
                   <div className="font-mono text-[8px] text-muted-foreground/50 mt-1">{item.category}</div>
                 </div>
-                {/* Decorative grid */}
-                <div className="absolute inset-0 opacity-10" style={{
-                  backgroundImage: "linear-gradient(currentColor 1px, transparent 1px), linear-gradient(90deg, currentColor 1px, transparent 1px)",
-                  backgroundSize: "32px 32px"
-                }} />
+                <div
+                  className="absolute inset-0 opacity-10"
+                  style={{
+                    backgroundImage:
+                      "linear-gradient(currentColor 1px, transparent 1px), linear-gradient(90deg, currentColor 1px, transparent 1px)",
+                    backgroundSize: "32px 32px",
+                  }}
+                />
               </div>
 
-              {/* Content */}
               <div className="p-5 flex flex-col flex-1 gap-3">
                 <div className="flex items-start justify-between gap-2">
                   <h3 className="font-display text-base leading-tight group-hover:translate-x-1 transition-transform duration-300">
@@ -217,7 +200,6 @@ export default function CasesPage() {
                   </div>
                 </div>
 
-                {/* Result */}
                 <div className="pt-3 border-t border-foreground/10">
                   <span className="font-mono text-[9px] text-muted-foreground uppercase tracking-widest">Результат</span>
                   <p className="text-sm font-display text-foreground mt-1">{item.result}</p>
@@ -234,7 +216,6 @@ export default function CasesPage() {
         )}
       </div>
 
-      {/* CTA */}
       <section className="border-t border-foreground/10">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12 py-16 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
           <div>
@@ -250,6 +231,8 @@ export default function CasesPage() {
           </Link>
         </div>
       </section>
+
+      <FooterSection />
     </main>
   );
 }
