@@ -133,13 +133,11 @@ function FormatPreview({ name, device }: { name: string; device: string }) {
   const content: Record<string, React.ReactNode> = {
     "Banners": (
       <div className="relative w-full h-full p-3">
-        {/* Page content */}
         <div className="space-y-1.5 pt-8">
           <div className="h-2 bg-foreground/10 rounded w-3/4" />
           <div className="h-1.5 bg-foreground/10 rounded w-1/2" />
           <div className="h-1.5 bg-foreground/10 rounded w-2/3" />
         </div>
-        {/* Leaderboard banner top */}
         <div className="absolute top-0 left-0 right-0 flex items-center justify-between px-3" style={{ height: 28, background: a }}>
           <span className="font-mono text-[7px] text-white/90 uppercase tracking-wider">Central ADV</span>
           <span className="font-mono text-[6px] text-white/60">728×90</span>
@@ -149,20 +147,16 @@ function FormatPreview({ name, device }: { name: string; device: string }) {
     "Video": (
       <div className="relative w-full h-full bg-foreground/5 flex flex-col">
         <div className="flex-1 flex items-center justify-center relative">
-          {/* Video frame */}
           <div className="absolute inset-2 rounded overflow-hidden" style={{ background: `${a}15`, border: `1.5px solid ${a}40` }}>
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="w-8 h-8 rounded-full flex items-center justify-center" style={{ background: a }}>
                 <span className="text-white text-sm ml-0.5">▶</span>
               </div>
             </div>
-            {/* Ad label */}
             <div className="absolute top-1.5 left-1.5 px-1.5 py-0.5 rounded text-[6px] font-mono text-white" style={{ background: a }}>AD</div>
-            {/* Skip */}
             <div className="absolute bottom-1.5 right-1.5 px-1.5 py-0.5 rounded text-[6px] font-mono text-white/80" style={{ background: "rgba(0,0,0,0.4)" }}>Skip › 5s</div>
           </div>
         </div>
-        {/* Progress */}
         <div className="h-2 bg-foreground/10">
           <div className="h-full w-1/3 rounded-l" style={{ background: a }} />
         </div>
@@ -172,7 +166,6 @@ function FormatPreview({ name, device }: { name: string; device: string }) {
       <div className="px-3 pt-2 space-y-2">
         <div className="h-1.5 bg-foreground/10 rounded" />
         <div className="h-1 bg-foreground/10 rounded w-3/4" />
-        {/* Native card */}
         <div className="rounded-lg overflow-hidden border" style={{ borderColor: `${a}40` }}>
           <div className="h-12 flex items-center justify-center" style={{ background: `${a}18` }}>
             <span className="font-mono text-[7px] uppercase" style={{ color: a }}>Sponsored Content</span>
@@ -199,7 +192,6 @@ function FormatPreview({ name, device }: { name: string; device: string }) {
           <div className="h-16 bg-foreground/5 rounded" />
           <div className="h-1 bg-foreground/10 rounded" />
         </div>
-        {/* Bottom banner */}
         <div className="absolute bottom-0 left-0 right-0 flex items-center justify-between px-3" style={{ height: 32, background: a }}>
           <span className="font-mono text-[7px] text-white/90 uppercase tracking-wide">Central ADV — Кликните!</span>
           <span className="font-mono text-[6px] text-white/60">320×50</span>
@@ -208,13 +200,11 @@ function FormatPreview({ name, device }: { name: string; device: string }) {
     ),
     "CTV": (
       <div className="relative w-full h-full">
-        {/* TV screen content */}
         <div className="absolute inset-0 bg-foreground/5 flex items-center justify-center">
           <div className="w-12 h-12 rounded-full border-2 border-foreground/15 flex items-center justify-center">
             <span className="text-foreground/20 text-xl">▶</span>
           </div>
         </div>
-        {/* Pause-banner overlay */}
         <div className="absolute bottom-0 left-0 right-0 flex items-center gap-3 px-4" style={{ height: "38%", background: `linear-gradient(to top, ${a}cc, ${a}44)` }}>
           <div className="w-10 h-10 rounded-lg bg-white/20 flex items-center justify-center shrink-0">
             <span className="font-mono text-[7px] text-white">LOGO</span>
@@ -235,7 +225,6 @@ function FormatPreview({ name, device }: { name: string; device: string }) {
           <div className="h-2 bg-foreground/10 rounded w-3/4" />
           <div className="h-1.5 bg-foreground/10 rounded w-1/2" />
         </div>
-        {/* Expandable panel */}
         <div className="absolute inset-x-3 bottom-3 rounded-xl overflow-hidden border" style={{ borderColor: `${a}50`, background: `${a}12` }}>
           <div className="flex items-center justify-between px-3 py-1.5" style={{ borderBottom: `1px solid ${a}30` }}>
             <span className="font-mono text-[7px] uppercase tracking-wider" style={{ color: a }}>Rich Media</span>
@@ -279,7 +268,6 @@ function FormatPreview({ name, device }: { name: string; device: string }) {
       <div className="px-3 pt-2 space-y-2">
         <div className="h-1.5 bg-foreground/10 rounded w-3/4" />
         <div className="h-1 bg-foreground/10 rounded w-1/2" />
-        {/* Out-stream block in content */}
         <div className="relative rounded-lg overflow-hidden" style={{ height: 80, background: `${a}10`, border: `1.5px solid ${a}35` }}>
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="w-7 h-7 rounded-full flex items-center justify-center" style={{ background: a }}>
@@ -316,17 +304,15 @@ function FormatPreview({ name, device }: { name: string; device: string }) {
     "In-App": (
       <div className="relative h-full">
         <div className="px-3 pt-2 space-y-1">
-          {/* App top bar */}
           <div className="h-6 rounded flex items-center px-2" style={{ background: `${a}20` }}>
             <span className="font-mono text-[6px]" style={{ color: a }}>MyApp</span>
           </div>
           <div className="grid grid-cols-3 gap-1.5">
             {[0,1,2,3,4,5].map(i => (
-              <div key={i} className="aspect-square rounded-lg bg-foreground/8" style={{ background: i === 2 ? `${a}20` : undefined }} />
+              <div key={i} className="aspect-square rounded-lg" style={{ background: i === 2 ? `${a}20` : "rgba(0,0,0,0.06)" }} />
             ))}
           </div>
         </div>
-        {/* In-App banner */}
         <div className="absolute bottom-0 left-0 right-0 flex items-center justify-between px-3" style={{ height: 30, background: a }}>
           <span className="font-mono text-[6px] text-white/90">In-App Banner</span>
           <div className="h-4 w-8 rounded-full bg-white/25 flex items-center justify-center">
@@ -343,7 +329,6 @@ function FormatPreview({ name, device }: { name: string; device: string }) {
           <div className="h-1.5 bg-foreground/10 rounded w-2/3" />
           <div className="h-1.5 bg-foreground/10 rounded w-3/5" />
         </div>
-        {/* Push notification card */}
         <div className="absolute top-3 right-3 rounded-xl overflow-hidden shadow-lg" style={{ width: 140, background: a }}>
           <div className="flex items-start gap-2 p-2.5">
             <div className="w-6 h-6 rounded-lg bg-white/20 flex items-center justify-center shrink-0">
@@ -397,7 +382,7 @@ function FormatPreview({ name, device }: { name: string; device: string }) {
   return null;
 }
 
-// === Full-page push overlay (layout mirrors HowItWorks) ===
+// === Bottom-sheet overlay: 4/5 height, blurred backdrop on remaining 1/5 ===
 
 function FormatsOverlay({ onClose }: { onClose: () => void }) {
   const [active, setActive] = useState(0);
@@ -405,107 +390,116 @@ function FormatsOverlay({ onClose }: { onClose: () => void }) {
   const detail = formatDetails[format.name];
 
   return (
-    <div className="fixed inset-0 z-50 bg-foreground text-background overflow-hidden flex flex-col animate-in slide-in-from-bottom duration-500">
-      {/* Diagonal pattern (same as how-it-works) */}
-      <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `repeating-linear-gradient(-45deg, transparent, transparent 40px, currentColor 40px, currentColor 41px)`
-        }} />
-      </div>
+    <div className="fixed inset-0 z-50 flex flex-col justify-end">
+      {/* Backdrop — top 1/5, blurred semi-transparent like the header */}
+      <div
+        className="shrink-0 cursor-pointer"
+        style={{ height: "20vh", background: "rgba(0,0,0,0.45)", backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)" }}
+        onClick={onClose}
+      />
 
-      {/* Header */}
-      <div className="relative z-10 flex items-center justify-between px-6 lg:px-12 h-16 border-b border-background/10 shrink-0">
-        <div className="flex items-center gap-3">
-          <span className="font-display text-base font-semibold">Форматы рекламы</span>
-          <span className="font-mono text-[10px] text-background/40 uppercase tracking-widest">{formats.length} форматов</span>
+      {/* Panel — bottom 4/5 */}
+      <div
+        className="relative bg-foreground text-background overflow-hidden flex flex-col animate-in slide-in-from-bottom duration-500"
+        style={{ height: "80vh" }}
+      >
+        {/* Diagonal pattern */}
+        <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
+          <div className="absolute inset-0" style={{
+            backgroundImage: `repeating-linear-gradient(-45deg, transparent, transparent 40px, currentColor 40px, currentColor 41px)`
+          }} />
         </div>
-        <button onClick={onClose} className="flex items-center gap-1.5 text-xs text-background/50 hover:text-background transition-colors group">
-          Закрыть <X className="w-4 h-4" />
-        </button>
-      </div>
 
-      {/* Body — grid like how-it-works */}
-      <div className="relative z-10 flex-1 overflow-y-auto">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12 py-12">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
+        {/* Header */}
+        <div className="relative z-10 flex items-center justify-between px-6 lg:px-12 h-16 border-b border-background/10 shrink-0">
+          <div className="flex items-center gap-3">
+            <span className="font-display text-base font-semibold">Форматы рекламы</span>
+            <span className="font-mono text-[10px] text-background/40 uppercase tracking-widest">{formats.length} форматов</span>
+          </div>
+          <button onClick={onClose} className="flex items-center gap-1.5 text-xs text-background/50 hover:text-background transition-colors">
+            Закрыть <X className="w-4 h-4" />
+          </button>
+        </div>
 
-            {/* Left: format list */}
-            <div className="space-y-0">
-              {formats.map((f, i) => (
-                <button
-                  key={f.name}
-                  type="button"
-                  onClick={() => setActive(i)}
-                  className={`w-full text-left py-5 border-b border-background/10 transition-all duration-500 group ${
-                    active === i ? "opacity-100" : "opacity-40 hover:opacity-70"
-                  }`}
-                >
-                  <div className="flex items-start gap-5">
-                    <span className="font-display text-xl text-background/30 w-6 shrink-0">{String(i + 1).padStart(2, "0")}</span>
-                    <div className="flex-1">
-                      <h3 className="text-xl lg:text-2xl font-display mb-1 group-hover:translate-x-2 transition-transform duration-300">
-                        {f.name}
-                      </h3>
-                      <p className="text-sm text-background/50">{f.category}</p>
-                      {active === i && (
-                        <div className="mt-3 h-px bg-background/20 overflow-hidden">
-                          <div className="h-full bg-background" style={{ animation: "progress 8s linear forwards" }} />
-                        </div>
-                      )}
+        {/* Scrollable body */}
+        <div className="relative z-10 flex-1 overflow-y-auto">
+          <div className="max-w-[1400px] mx-auto px-6 lg:px-12 py-10">
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
+
+              {/* Left: format list */}
+              <div className="space-y-0">
+                {formats.map((f, i) => (
+                  <button
+                    key={f.name}
+                    type="button"
+                    onClick={() => setActive(i)}
+                    className={`w-full text-left py-5 border-b border-background/10 transition-all duration-500 group ${
+                      active === i ? "opacity-100" : "opacity-40 hover:opacity-70"
+                    }`}
+                  >
+                    <div className="flex items-start gap-5">
+                      <span className="font-display text-xl text-background/30 w-6 shrink-0">{String(i + 1).padStart(2, "0")}</span>
+                      <div className="flex-1">
+                        <h3 className="text-xl lg:text-2xl font-display mb-1 group-hover:translate-x-2 transition-transform duration-300">
+                          {f.name}
+                        </h3>
+                        <p className="text-sm text-background/50">{f.category}</p>
+                        {active === i && (
+                          <div className="mt-3 h-px bg-background/20 overflow-hidden">
+                            <div className="h-full bg-background" style={{ animation: "progress 8s linear forwards" }} />
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  </button>
+                ))}
+              </div>
+
+              {/* Right: sticky device preview */}
+              <div className="lg:sticky lg:top-8 self-start">
+                <div className="border border-background/10 overflow-hidden">
+                  <div className="px-6 py-4 border-b border-background/10 flex items-center justify-between">
+                    <div className="flex gap-2">
+                      {[0,1,2].map(i => <div key={i} className="w-3 h-3 rounded-full bg-background/20" />)}
+                    </div>
+                    <span className="text-xs font-mono text-background/40">{format.name}</span>
+                  </div>
+
+                  <div className="p-6 bg-background/[0.03]">
+                    <div key={format.name} className="transition-all duration-300">
+                      <FormatPreview name={format.name} device={detail.device} />
                     </div>
                   </div>
-                </button>
-              ))}
-            </div>
 
-            {/* Right: sticky device preview */}
-            <div className="lg:sticky lg:top-8 self-start">
-              <div className="border border-background/10 overflow-hidden">
-                {/* Window header */}
-                <div className="px-6 py-4 border-b border-background/10 flex items-center justify-between">
-                  <div className="flex gap-2">
-                    {[0,1,2].map(i => <div key={i} className="w-3 h-3 rounded-full bg-background/20" />)}
+                  <div className="p-6 border-t border-background/10">
+                    <p className="text-sm text-background/60 mb-4">{detail.desc}</p>
+                    <ul className="space-y-2">
+                      {detail.details.map((d, li) => (
+                        <li key={`${format.name}-${li}`} className="flex items-center gap-3">
+                          <span className="w-1.5 h-1.5 rounded-full" style={{ background: ACCENT }} />
+                          <span className="text-sm text-background/70">{d}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
-                  <span className="text-xs font-mono text-background/40">{format.name}</span>
-                </div>
 
-                {/* Device preview */}
-                <div className="p-6 bg-background/[0.03]">
-                  <div key={format.name} className="transition-all duration-300">
-                    <FormatPreview name={format.name} device={detail.device} />
+                  <div className="px-6 py-4 border-t border-background/10 flex items-center gap-3">
+                    <span className="w-2 h-2 rounded-full animate-pulse" style={{ background: ACCENT }} />
+                    <span className="text-xs font-mono text-background/40">Доступно для запуска</span>
                   </div>
-                </div>
-
-                {/* Description */}
-                <div className="p-6 border-t border-background/10">
-                  <p className="text-sm text-background/60 mb-4">{detail.desc}</p>
-                  <ul className="space-y-2">
-                    {detail.details.map((d, li) => (
-                      <li key={`${format.name}-${li}`} className="flex items-center gap-3">
-                        <span className="w-1.5 h-1.5 rounded-full" style={{ background: ACCENT }} />
-                        <span className="text-sm text-background/70">{d}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                {/* Status */}
-                <div className="px-6 py-4 border-t border-background/10 flex items-center gap-3">
-                  <span className="w-2 h-2 rounded-full animate-pulse" style={{ background: ACCENT }} />
-                  <span className="text-xs font-mono text-background/40">Доступно для запуска</span>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <style jsx>{`
-        @keyframes progress {
-          from { width: 0%; }
-          to { width: 100%; }
-        }
-      `}</style>
+        <style jsx>{`
+          @keyframes progress {
+            from { width: 0%; }
+            to { width: 100%; }
+          }
+        `}</style>
+      </div>
     </div>
   );
 }
