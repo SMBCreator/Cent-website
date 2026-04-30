@@ -9,6 +9,7 @@ const navLinks = [
   { name: "Процесс", href: "#how-it-works" },
   { name: "Форматы", href: "#formats" },
   { name: "Технологии", href: "#tech" },
+  { name: "Кейсы", href: "#testimonials" },
 ];
 
 export function Navigation() {

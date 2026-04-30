@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
 const testimonials = [
   {
@@ -51,7 +52,7 @@ export function TestimonialsSection() {
   const activeTestimonial = testimonials[activeIndex];
 
   return (
-    <section className="relative py-24 lg:py-32 border-t border-foreground/10 lg:pb-12">
+    <section id="testimonials" className="relative py-24 lg:py-32 border-t border-foreground/10 lg:pb-12">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         {/* Section Label */}
         <div className="flex items-center gap-3 mb-12">
@@ -132,10 +133,19 @@ export function TestimonialsSection() {
                 />
               ))}
             </div>
+
+            {/* Cases CTA */}
+            <Link
+              href="/cases"
+              className="mt-8 inline-flex items-center gap-2 px-5 py-2.5 bg-foreground text-background text-xs font-medium rounded-full hover:bg-foreground/90 transition-all duration-300 group w-fit"
+            >
+              Кейсы
+              <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
+            </Link>
           </div>
         </div>
 
-        {/* Company Logos Marquee Label */}
+        {/* Industry marquee label */}
         <div className="mt-16 pt-10 border-t border-foreground/10">
           <p className="font-mono text-[10px] tracking-widest text-muted-foreground uppercase mb-6 text-center">
             Решения для отраслей
@@ -144,9 +154,9 @@ export function TestimonialsSection() {
       </div>
       
       {/* Full-width marquee outside container */}
-      <div className="w-full">
-        <div className="flex gap-12 items-center marquee">
-          {[...Array(2)].map((_, setIdx) => (
+      <div className="w-full overflow-hidden">
+        <div className="flex gap-12 items-center marquee" style={{ width: "max-content" }}>
+          {[...Array(4)].map((_, setIdx) => (
             <div key={setIdx} className="flex gap-12 items-center shrink-0">
               {["Авто", "FMCG", "Фарма", "E-commerce", "Услуги", "Финансы", "Недвижимость", "Телеком"].map(
                 (industry) => (

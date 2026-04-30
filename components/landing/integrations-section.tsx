@@ -1,8 +1,10 @@
 "use client";
 
 import { useEffect, useState, useRef } from "react";
+import Link from "next/link";
 
 const formats = [
+  { name: "Banners", category: "Баннерная реклама" },
   { name: "Display", category: "Баннерная реклама" },
   { name: "Video", category: "Видеореклама" },
   { name: "Native", category: "Нативная реклама" },
@@ -52,17 +54,23 @@ export function IntegrationsSection() {
             <br />
             digital-рекламы
           </h2>
-          <p className="text-base text-muted-foreground">
+          <p className="text-base text-muted-foreground mb-8">
             От баннеров до Smart TV. Размещение на сайтах, в соцсетях, мобильных приложениях и стриминговых сервисах.
           </p>
+          <Link
+            href="/formats"
+            className="inline-flex items-center gap-2 px-6 py-3 border border-foreground/20 hover:border-foreground/60 hover:bg-foreground/[0.04] transition-all duration-300 text-sm font-medium rounded-full group"
+          >
+            Интерактивные примеры форматов
+            <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
+          </Link>
         </div>
-
       </div>
       
-      {/* Full-width marquees outside container */}
-      <div className="w-full mb-4">
-        <div className="flex gap-4 marquee">
-          {[...Array(2)].map((_, setIndex) => (
+      {/* Full-width marquee row 1 */}
+      <div className="w-full mb-4 overflow-hidden">
+        <div className="flex gap-4 marquee" style={{ width: "max-content" }}>
+          {[...Array(4)].map((_, setIndex) => (
             <div key={setIndex} className="flex gap-4 shrink-0">
               {formats.map((format) => (
                 <div
@@ -80,10 +88,10 @@ export function IntegrationsSection() {
         </div>
       </div>
       
-      {/* Reverse marquee */}
-      <div className="w-full">
-        <div className="flex gap-4 marquee-reverse">
-          {[...Array(2)].map((_, setIndex) => (
+      {/* Full-width marquee row 2 - reverse */}
+      <div className="w-full overflow-hidden">
+        <div className="flex gap-4 marquee-reverse" style={{ width: "max-content" }}>
+          {[...Array(4)].map((_, setIndex) => (
             <div key={setIndex} className="flex gap-4 shrink-0">
               {[...formats].reverse().map((format) => (
                 <div
