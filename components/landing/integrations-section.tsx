@@ -382,7 +382,7 @@ function FormatPreview({ name, device }: { name: string; device: string }) {
   return null;
 }
 
-// === Bottom-sheet overlay: 4/5 height, blurred backdrop on remaining 1/5 ===
+// === Centered modal: 5/6 screen, padding all sides, rounded corners ===
 
 function FormatsOverlay({ onClose }: { onClose: () => void }) {
   const [active, setActive] = useState(0);
@@ -390,28 +390,27 @@ function FormatsOverlay({ onClose }: { onClose: () => void }) {
   const detail = formatDetails[format.name];
 
   return (
-    <div className="fixed inset-0 z-50 flex flex-col justify-end">
-      {/* Backdrop — top 1/5, blurred semi-transparent like the header */}
+    // Full-screen backdrop — blurred, click outside to close
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center p-[4vh_3vw]"
+      style={{ background: "rgba(0,0,0,0.55)", backdropFilter: "blur(14px)", WebkitBackdropFilter: "blur(14px)" }}
+      onClick={onClose}
+    >
+      {/* Modal panel — stops click propagation */}
       <div
-        className="shrink-0 cursor-pointer"
-        style={{ height: "20vh", background: "rgba(0,0,0,0.45)", backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)" }}
-        onClick={onClose}
-      />
-
-      {/* Panel — bottom 4/5 */}
-      <div
-        className="relative bg-foreground text-background overflow-hidden flex flex-col animate-in slide-in-from-bottom duration-500"
-        style={{ height: "80vh" }}
+        className="relative bg-foreground text-background overflow-hidden flex flex-col rounded-2xl animate-in zoom-in-95 fade-in duration-300 w-full h-full"
+        style={{ maxWidth: "calc(100vw - 6vw)", maxHeight: "calc(100vh - 8vh)" }}
+        onClick={e => e.stopPropagation()}
       >
         {/* Diagonal pattern */}
-        <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
+        <div className="absolute inset-0 opacity-[0.03] pointer-events-none rounded-2xl overflow-hidden">
           <div className="absolute inset-0" style={{
             backgroundImage: `repeating-linear-gradient(-45deg, transparent, transparent 40px, currentColor 40px, currentColor 41px)`
           }} />
         </div>
 
         {/* Header */}
-        <div className="relative z-10 flex items-center justify-between px-6 lg:px-12 h-16 border-b border-background/10 shrink-0">
+        <div className="relative z-10 flex items-center justify-between px-6 lg:px-10 h-16 border-b border-background/10 shrink-0">
           <div className="flex items-center gap-3">
             <span className="font-display text-base font-semibold">Форматы рекламы</span>
             <span className="font-mono text-[10px] text-background/40 uppercase tracking-widest">{formats.length} форматов</span>
@@ -423,7 +422,7 @@ function FormatsOverlay({ onClose }: { onClose: () => void }) {
 
         {/* Scrollable body */}
         <div className="relative z-10 flex-1 overflow-y-auto">
-          <div className="max-w-[1400px] mx-auto px-6 lg:px-12 py-10">
+          <div className="max-w-[1400px] mx-auto px-6 lg:px-10 py-10">
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
 
               {/* Left: format list */}
@@ -457,7 +456,7 @@ function FormatsOverlay({ onClose }: { onClose: () => void }) {
 
               {/* Right: sticky device preview */}
               <div className="lg:sticky lg:top-8 self-start">
-                <div className="border border-background/10 overflow-hidden">
+                <div className="border border-background/10 overflow-hidden rounded-xl">
                   <div className="px-6 py-4 border-b border-background/10 flex items-center justify-between">
                     <div className="flex gap-2">
                       {[0,1,2].map(i => <div key={i} className="w-3 h-3 rounded-full bg-background/20" />)}
