@@ -64,7 +64,7 @@ export function FooterSection() {
                   <a
                     key={link.name}
                     href={link.href}
-                    className="text-xs text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1 group"
+                    className="text-xs text-muted-foreground hover:text-[#2563eb] transition-colors flex items-center gap-1 group"
                   >
                     {link.name}
                     <ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
@@ -82,11 +82,11 @@ export function FooterSection() {
                     <li key={link.name}>
                       <a
                         href={link.href}
-                        className="text-xs text-muted-foreground hover:text-foreground transition-colors inline-flex items-center gap-2"
+                        className="text-xs text-muted-foreground hover:text-[#2563eb] transition-colors inline-flex items-center gap-2"
                       >
                         {link.name}
                         {"badge" in link && link.badge && (
-                          <span className="text-[10px] px-1.5 py-0.5 bg-foreground text-background rounded-full">
+                          <span className="text-[10px] px-1.5 py-0.5 bg-[#2563eb] text-white rounded-full">
                             {link.badge}
                           </span>
                         )}

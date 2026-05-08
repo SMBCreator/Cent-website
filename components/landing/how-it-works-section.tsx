@@ -66,10 +66,10 @@ export function HowItWorksSection() {
     <section
       id="how-it-works"
       ref={sectionRef}
-      className="relative py-24 lg:py-32 bg-foreground text-background overflow-hidden"
+      className="relative py-24 lg:py-32 bg-[#2563eb] text-white overflow-hidden"
     >
       {/* Diagonal lines pattern */}
-      <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
+      <div className="absolute inset-0 opacity-[0.06] pointer-events-none">
         <div className="absolute inset-0" style={{
           backgroundImage: `repeating-linear-gradient(
             -45deg,
@@ -84,8 +84,8 @@ export function HowItWorksSection() {
       <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12">
         {/* Header */}
         <div className="mb-12 lg:mb-20">
-          <span className="inline-flex items-center gap-3 text-xs font-mono text-background/50 mb-4 uppercase tracking-widest">
-            <span className="w-6 h-px bg-background/30" />
+          <span className="inline-flex items-center gap-3 text-xs font-mono text-white/50 mb-4 uppercase tracking-widest">
+            <span className="w-6 h-px bg-white/30" />
             Процесс работы
           </span>
           <h2
@@ -95,7 +95,7 @@ export function HowItWorksSection() {
           >
             Наш подход.
             <br />
-            <span className="text-background/50">Запуск за 24 часа!</span>
+            <span className="text-white/60">Запуск за 24 часа!</span>
           </h2>
         </div>
 
@@ -108,25 +108,25 @@ export function HowItWorksSection() {
                 key={step.number}
                 type="button"
                 onClick={() => setActiveStep(index)}
-                className={`w-full text-left py-6 border-b border-background/10 transition-all duration-500 group ${
+                className={`w-full text-left py-6 border-b border-white/10 transition-all duration-500 group ${
                   activeStep === index ? "opacity-100" : "opacity-40 hover:opacity-70"
                 }`}
               >
                 <div className="flex items-start gap-5">
-                  <span className="font-display text-2xl text-background/30">{step.number}</span>
+                  <span className="font-display text-2xl text-white/30">{step.number}</span>
                   <div className="flex-1">
                     <h3 className="text-xl lg:text-2xl font-display mb-2 group-hover:translate-x-2 transition-transform duration-300">
                       {step.title}
                     </h3>
-                    <p className="text-sm text-background/60 leading-relaxed">
+                    <p className="text-sm text-white/60 leading-relaxed">
                       {step.description}
                     </p>
                     
                     {/* Progress indicator */}
                     {activeStep === index && (
-                      <div className="mt-4 h-px bg-background/20 overflow-hidden">
+                      <div className="mt-4 h-px bg-white/20 overflow-hidden">
                         <div 
-                          className="h-full bg-background w-0"
+                          className="h-full bg-white w-0"
                           style={{
                             animation: 'progress 5s linear forwards'
                           }}
@@ -141,20 +141,20 @@ export function HowItWorksSection() {
 
           {/* Details display */}
           <div className="lg:sticky lg:top-32 self-start">
-            <div className="border border-background/10 overflow-hidden">
+            <div className="border border-white/10 overflow-hidden">
               {/* Window header */}
-              <div className="px-6 py-4 border-b border-background/10 flex items-center justify-between">
+              <div className="px-6 py-4 border-b border-white/10 flex items-center justify-between">
                 <div className="flex gap-2">
-                  <div className="w-3 h-3 rounded-full bg-background/20" />
-                  <div className="w-3 h-3 rounded-full bg-background/20" />
-                  <div className="w-3 h-3 rounded-full bg-background/20" />
+                  <div className="w-3 h-3 rounded-full bg-white/20" />
+                  <div className="w-3 h-3 rounded-full bg-white/20" />
+                  <div className="w-3 h-3 rounded-full bg-white/20" />
                 </div>
-                <span className="text-xs font-mono text-background/40">Этап {activeStep + 1}</span>
+                <span className="text-xs font-mono text-white/40">Этап {activeStep + 1}</span>
               </div>
 
               {/* Content */}
               <div className="p-6 min-h-[240px]">
-                <h4 className="text-xl font-display mb-5 text-background">
+                <h4 className="text-xl font-display mb-5 text-white">
                   {steps[activeStep].title}
                 </h4>
                 <ul className="space-y-3">
@@ -166,17 +166,17 @@ export function HowItWorksSection() {
                         animationDelay: `${lineIndex * 100}ms`,
                       }}
                     >
-                      <span className="w-1.5 h-1.5 bg-background/40 rounded-full" />
-                      <span className="text-background/70 text-sm">{detail}</span>
+                      <span className="w-1.5 h-1.5 bg-white/40 rounded-full" />
+                      <span className="text-white/70 text-sm">{detail}</span>
                     </li>
                   ))}
                 </ul>
               </div>
 
               {/* Status */}
-              <div className="px-6 py-4 border-t border-background/10 flex items-center gap-3">
+              <div className="px-6 py-4 border-t border-white/10 flex items-center gap-3">
                 <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-                <span className="text-xs font-mono text-background/40">Готовы к работе</span>
+                <span className="text-xs font-mono text-white/40">Готовы к работе</span>
               </div>
             </div>
           </div>

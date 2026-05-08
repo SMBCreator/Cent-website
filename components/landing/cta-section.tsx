@@ -34,7 +34,7 @@ export function CtaSection() {
     <section ref={sectionRef} id="contact" className="relative py-24 lg:py-32 overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         <div
-          className={`relative border border-foreground transition-all duration-1000 ${
+          className={`relative border border-[#2563eb]/40 transition-all duration-1000 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
           onMouseMove={handleMouseMove}
@@ -43,7 +43,7 @@ export function CtaSection() {
           <div 
             className="absolute inset-0 opacity-10 pointer-events-none transition-opacity duration-300"
             style={{
-              background: `radial-gradient(600px circle at ${mousePosition.x}% ${mousePosition.y}%, rgba(0,0,0,0.15), transparent 40%)`
+              background: `radial-gradient(600px circle at ${mousePosition.x}% ${mousePosition.y}%, rgba(37,99,235,0.15), transparent 40%)`
             }}
           />
           
@@ -65,7 +65,7 @@ export function CtaSection() {
                 <div className="flex flex-col sm:flex-row items-start gap-3">
                   <Button
                     size="lg"
-                    className="bg-foreground hover:bg-foreground/90 text-background px-6 h-12 text-sm rounded-full group"
+                    className="bg-[#2563eb] hover:bg-[#1d4ed8] text-white px-6 h-12 text-sm rounded-full group"
                   >
                     Напишите нам
                     <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
@@ -91,9 +91,9 @@ export function CtaSection() {
             </div>
           </div>
 
-          {/* Decorative corner */}
-          <div className="absolute top-0 right-0 w-32 h-32 border-b border-l border-foreground/10" />
-          <div className="absolute bottom-0 left-0 w-32 h-32 border-t border-r border-foreground/10" />
+          {/* Decorative corners */}
+          <div className="absolute top-0 right-0 w-32 h-32 border-b border-l border-[#2563eb]/20" />
+          <div className="absolute bottom-0 left-0 w-32 h-32 border-t border-r border-[#2563eb]/20" />
         </div>
       </div>
     </section>

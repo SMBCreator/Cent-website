@@ -45,7 +45,7 @@ export function Navigation() {
             isScrolled ? "h-14" : "h-20"
           }`}
         >
-          {/* Logo — always goes to home */}
+          {/* Logo */}
           <Link href="/" className="flex items-center gap-2 group">
             <span className={`font-display font-semibold tracking-tight transition-all duration-500 ${isScrolled ? "text-lg" : "text-xl"}`}>Central ADV</span>
             <span className={`text-muted-foreground font-mono uppercase tracking-wider transition-all duration-500 ${isScrolled ? "text-[8px] mt-0.5" : "text-[10px] mt-1"}`}>buying</span>
@@ -59,7 +59,7 @@ export function Navigation() {
                 className="text-xs text-foreground/70 hover:text-foreground transition-colors duration-300 relative group"
               >
                 {link.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-px bg-foreground transition-all duration-300 group-hover:w-full" />
+                <span className="absolute -bottom-1 left-0 w-0 h-px bg-[#2563eb] transition-all duration-300 group-hover:w-full" />
               </Link>
             ))}
           </div>
@@ -73,7 +73,7 @@ export function Navigation() {
             </Link>
             <Button
               size="sm"
-              className={`bg-foreground hover:bg-foreground/90 text-background rounded-full transition-all duration-500 ${isScrolled ? "px-3 h-7 text-[10px]" : "px-5 text-xs"}`}
+              className={`bg-[#2563eb] hover:bg-[#1d4ed8] text-white rounded-full transition-all duration-500 ${isScrolled ? "px-3 h-7 text-[10px]" : "px-5 text-xs"}`}
               asChild
             >
               <Link href="/#contact">Написать</Link>
@@ -110,7 +110,7 @@ export function Navigation() {
                 key={link.name}
                 href={link.href}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className={`text-4xl font-display font-semibold text-foreground hover:text-muted-foreground transition-all duration-500 ${
+                className={`text-4xl font-display font-semibold text-foreground hover:text-[#2563eb] transition-all duration-500 ${
                   isMobileMenuOpen 
                     ? "opacity-100 translate-y-0" 
                     : "opacity-0 translate-y-4"
@@ -138,7 +138,7 @@ export function Navigation() {
               <Link href="/#contact">Контакты</Link>
             </Button>
             <Button 
-              className="flex-1 bg-foreground text-background rounded-full h-12 text-sm"
+              className="flex-1 bg-[#2563eb] hover:bg-[#1d4ed8] text-white rounded-full h-12 text-sm"
               onClick={() => setIsMobileMenuOpen(false)}
               asChild
             >

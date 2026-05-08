@@ -108,7 +108,7 @@ export function HeroSection() {
                   </span>
                 ))}
               </span>
-              <span className="absolute -bottom-0.5 left-0 right-0 h-1.5 bg-foreground/10" />
+              <span className="absolute -bottom-0.5 left-0 right-0 h-1.5 bg-[#2563eb]/20" />
             </span>
           </span>
         </div>
@@ -131,7 +131,7 @@ export function HeroSection() {
           >
             <Button 
               size="lg" 
-              className="bg-foreground hover:bg-foreground/90 text-background px-6 h-12 text-sm rounded-full group"
+              className="bg-[#2563eb] hover:bg-[#1d4ed8] text-white px-6 h-12 text-sm rounded-full group"
             >
               Написать
               <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
@@ -148,7 +148,7 @@ export function HeroSection() {
         
       </div>
       
-      {/* Stats marquee - full width outside container */}
+      {/* Stats marquee */}
       <div 
         className={`absolute bottom-8 lg:bottom-12 left-0 right-0 transition-all duration-700 delay-500 ${
           isVisible ? "opacity-100" : "opacity-0"
@@ -175,8 +175,6 @@ export function HeroSection() {
           ))}
         </div>
       </div>
-      
-      {/* Scroll indicator */}
       
     </section>
   );
